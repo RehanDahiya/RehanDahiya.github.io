@@ -1,0 +1,74 @@
+:root{
+  --bg:#fbfaf8; --surface:#ffffff; --text:#1c1b19; --muted:#6b6862;
+  --line:#e6e2db; --accent:#8a4b2a; --accent-soft:#f3ece6;
+  --max:44rem;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#141312; --surface:#1c1b19; --text:#eeebe6; --muted:#9a958c;
+    --line:#2e2c29; --accent:#d99a6c; --accent-soft:#241d18;
+  }
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:ui-serif,Georgia,"Iowan Old Style","Times New Roman",serif;
+  font-size:1.0625rem; line-height:1.72;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--max); margin:0 auto; padding:3.5rem 1.5rem 5rem}
+a{color:var(--accent); text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+
+header.site{border-bottom:1px solid var(--line); padding-bottom:1.75rem; margin-bottom:2.5rem}
+header.site h1{font-size:1.9rem; line-height:1.25; margin:0 0 .5rem; letter-spacing:-.015em}
+header.site p{margin:0; color:var(--muted); font-size:.98rem}
+.backlink{
+  display:inline-block; margin-bottom:1.75rem; font-size:.9rem;
+  font-family:ui-sans-serif,-apple-system,system-ui,sans-serif; text-decoration:none;
+}
+.backlink:hover{text-decoration:underline}
+
+h2{font-size:1.35rem; margin:2.5rem 0 .75rem; letter-spacing:-.01em}
+h3{font-size:1.05rem; margin:2rem 0 .5rem; letter-spacing:-.005em}
+p{margin:0 0 1.15rem}
+
+.intro{font-size:1.12rem; color:var(--text)}
+.meta{
+  font-family:ui-sans-serif,-apple-system,system-ui,sans-serif;
+  font-size:.82rem; letter-spacing:.06em; text-transform:uppercase;
+  color:var(--muted); margin:0 0 .4rem;
+}
+
+ul.weeks{list-style:none; padding:0; margin:1.5rem 0 0}
+ul.weeks li{border-top:1px solid var(--line); padding:1.1rem 0}
+ul.weeks li:last-child{border-bottom:1px solid var(--line)}
+ul.weeks a{
+  font-family:ui-sans-serif,-apple-system,system-ui,sans-serif;
+  font-size:1.05rem; font-weight:600; text-decoration:none; display:block;
+}
+ul.weeks a:hover{text-decoration:underline}
+ul.weeks .sub{color:var(--muted); font-size:.92rem; margin-top:.2rem;
+  font-family:ui-sans-serif,-apple-system,system-ui,sans-serif}
+
+.ailog{
+  background:var(--accent-soft); border-left:3px solid var(--accent);
+  border-radius:0 6px 6px 0; padding:1.25rem 1.4rem; margin:2.5rem 0 1rem;
+  font-family:ui-sans-serif,-apple-system,system-ui,sans-serif; font-size:.95rem; line-height:1.6;
+}
+.ailog h3{margin:0 0 .75rem; font-size:.8rem; letter-spacing:.08em;
+  text-transform:uppercase; color:var(--accent)}
+.ailog dl{margin:0; display:grid; grid-template-columns:auto 1fr; gap:.5rem 1rem}
+.ailog dt{font-weight:600; color:var(--muted); white-space:nowrap}
+.ailog dd{margin:0}
+@media (max-width:34rem){
+  .ailog dl{grid-template-columns:1fr; gap:.15rem}
+  .ailog dd{margin-bottom:.7rem}
+  .wrap{padding:2.5rem 1.25rem 4rem}
+  header.site h1{font-size:1.6rem}
+}
+footer.site{
+  margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line);
+  color:var(--muted); font-size:.85rem;
+  font-family:ui-sans-serif,-apple-system,system-ui,sans-serif;
+}
